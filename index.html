@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="task-app">
+    <form class="task-form">
+      <input class="task-form__field" id="text" type="text" placeholder="Write your task here..." required>
+      <button class="task-form__button">Add</button>
+    </form>
+    <ul class="task-list">
+      <template class="task-item__template">
+        <div class="task-item">
+          <input class="task-item__status" type="checkbox">
+          <label class="task-item__text"></label>
+        </div>
+      </template>
+    </ul>
+  </main>
+</body>
+</html>
