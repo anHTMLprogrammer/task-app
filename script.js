@@ -3,6 +3,10 @@ const taskTemplateNode = document.querySelector('.task-item__template');
 const taskListNode = document.querySelector('.task-list');
 const taskStorage = JSON.parse(localStorage.getItem('data')) || {};
 
+function saveList() {
+  localStorage.setItem('data', JSON.stringify(taskStorage))
+}
+
 function displayTask(taskId) {
   const taskText = taskStorage[taskId];
   
@@ -22,8 +26,7 @@ function displayTask(taskId) {
     } else {
       taskStorage[taskId] = taskText;
     }
-
-    localStorage.setItem('data', JSON.stringify(taskStorage)); // Save changes
+    saveList();
   });
 
   taskListNode.prepend(taskNode);
@@ -40,4 +43,5 @@ taskFormNode.onsubmit = function(e) {
   displayTask(taskId);
 
   this.text.value = ''; // clear input field
+  saveList();
 }
